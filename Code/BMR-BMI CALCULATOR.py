@@ -8,7 +8,7 @@ from tkinter import colorchooser
 # Sets application main window parameters
 
 m = Tk()
-m. title('BMR & BMI CACULATOR © FAISAL HUSSAIN 2024')
+m. title('BMR & BMI CACULATOR © FAISAL HUSSAIN')
 m.geometry('750x550')
 m.config(bg='royalblue2')
 valBMR = 0
@@ -81,7 +81,7 @@ Label5.place(x=250,y=210)
 
 # Creates combobox & selectable values
 
-exercisechoosen = ttk.Combobox(m, state="readonly", width = 27, values=["None",
+exercisechosen = ttk.Combobox(m, state="readonly", width = 27, values=["None",
                                                                         "Light (1-3 Days/Week)"
                                                                         , "Moderate (3-5 Days/Week)"
                                                                         , "Heavy (5-6 Days/Week)"
@@ -89,18 +89,18 @@ exercisechoosen = ttk.Combobox(m, state="readonly", width = 27, values=["None",
 
 # Set combobox parameters
 
-exercisechoosen. place(x="415",y="210")
+exercisechosen. place(x="420",y="210")
 
 # creates a Function for when different exercises are selected
 
 def exercise_selected(event):
-   selected_exercise = exercisechoosen.get()
+   selected_exercise = exercisechosen.get()
    print("You selected:", selected_exercise)
-exercisechoosen.bind("<<ComboboxSelected>>", exercise_selected)
+exercisechosen.bind("<<ComboboxSelected>>", exercise_selected)
 
 # Sets combobox default value 
 
-exercisechoosen.current(0)
+exercisechosen.current(0)
 
 ###########################################################################################################################
 
@@ -111,13 +111,13 @@ def harriscalcmale():
     textBMR = Label(m, text=bmr, bg='green', fg='white')
     textBMR.place(x=300, y=350)
     valBMR = int(textBMR.cget("text"))  # Get the text from the label and convert it to an integer
-    if exercisechoosen.get() == "None":
+    if exercisechosen.get() == "None":
         valBMR = round(valBMR * 1.2)
-    elif exercisechoosen.get() == "Light (1-3 Days/Week)":
+    elif exercisechosen.get() == "Light (1-3 Days/Week)":
             valBMR = round(valBMR * 1.375)
-    elif exercisechoosen.get() == "Moderate (3-5 Days/Week)":
+    elif exercisechosen.get() == "Moderate (3-5 Days/Week)":
             valBMR = round(valBMR * 1.55)
-    elif exercisechoosen.get() == "Heavy (5-6 Days/Week)":
+    elif exercisechosen.get() == "Heavy (5-6 Days/Week)":
             valBMR = round(valBMR * 1.725)
     else:valBMR = round(valBMR * 1.9)
             # Apply the multiplier to valBMR
@@ -134,13 +134,13 @@ def harriscalcFemale():
     textBMR = Label(m,text = round(655.1 + (9.563 * weight.get()) + (1.85 * heightcm.get()) - (4.676 * ages.get())),bg='green', fg='white')
     textBMR.place(x=300,y=350)
     valBMR = int(textBMR.cget("text"))  # Get the text from the label and convert it to an integer
-    if exercisechoosen.get() == "None":
+    if exercisechosen.get() == "None":
         valBMR = round(valBMR * 1.2)
-    elif exercisechoosen.get() == "Light (1-3 Days/Week)":
+    elif exercisechosen.get() == "Light (1-3 Days/Week)":
             valBMR = round(valBMR * 1.375)
-    elif exercisechoosen.get() == "Moderate (3-5 Days/Week)":
+    elif exercisechosen.get() == "Moderate (3-5 Days/Week)":
             valBMR = round(valBMR * 1.55)
-    elif exercisechoosen.get() == "Heavy (5-6 Days/Week)":
+    elif exercisechosen.get() == "Heavy (5-6 Days/Week)":
             valBMR = round(valBMR * 1.725)
     else:valBMR = round(valBMR * 1.9)
             # Apply the multiplier to valBMR
@@ -158,13 +158,13 @@ def joercalcmale():
     textBMR = Label(m,text = round((10 * weight.get()) + (6.25 * heightcm.get()) - 5* ages.get()+ 5),bg='green', fg='white')
     textBMR.place(x=300,y=350)
     valBMR = int(textBMR.cget("text"))  # Get the text from the label and convert it to an integer
-    if exercisechoosen.get() == "None":
+    if exercisechosen.get() == "None":
         valBMR = round(valBMR * 1.2)
     elif exercisechoosen.get() == "Light (1-3 Days/Week)":
             valBMR = round(valBMR * 1.375)
-    elif exercisechoosen.get() == "Moderate (3-5 Days/Week)":
+    elif exercisechosen.get() == "Moderate (3-5 Days/Week)":
             valBMR = round(valBMR * 1.55)
-    elif exercisechoosen.get() == "Heavy (5-6 Days/Week)":
+    elif exercisechosen.get() == "Heavy (5-6 Days/Week)":
             valBMR = round(valBMR * 1.725)
     else:valBMR = round(valBMR * 1.9)
             # Apply the multiplier to valBMR
@@ -182,13 +182,13 @@ def joercalcFemale():
     textBMR = Label(m,text = round((10 * weight.get()) + (6.25 * heightcm.get()) - 5* ages.get()-161),bg='green', fg='white')
     textBMR.place(x=300,y=350)
     valBMR = int(textBMR.cget("text"))  # Get the text from the label and convert it to an integer
-    if exercisechoosen.get() == "None":
+    if exercisechosen.get() == "None":
         valBMR = round(valBMR * 1.2)
-    elif exercisechoosen.get() == "Light (1-3 Days/Week)":
+    elif exercisechosen.get() == "Light (1-3 Days/Week)":
             valBMR = round(valBMR * 1.375)
-    elif exercisechoosen.get() == "Moderate (3-5 Days/Week)":
+    elif exercisechosen.get() == "Moderate (3-5 Days/Week)":
             valBMR = round(valBMR * 1.55)
-    elif exercisechoosen.get() == "Heavy (5-6 Days/Week)":
+    elif exercisechosen.get() == "Heavy (5-6 Days/Week)":
             valBMR = round(valBMR * 1.725)
     else:valBMR = round(valBMR * 1.9)
             # Apply the multiplier to valBMR
@@ -236,13 +236,13 @@ btn5 = Button(m, text='BMI', bg='orange', fg='red', bd='5', height=2, width=25, 
 btn5.place(x=150, y=375)
 
 # Adds label to inform user the data that follows is the results of the BMI calculation
-textBMI = Label (m, text= bmi)
+textBMI = Label (m, text= '0')
 textBMI.place(x=400, y=400)
 textrange = Label(m, text='BMI is ', bg='black', fg='white')
 textrange.place(x=350, y=400)
 
 bmiresult = Label(m, text='', bg='black', fg='white')
-bmiresult.place(x=600, y=550)
+bmiresult.place(x=500, y=400)
 
     #elif exercisechoosen.get() == "Light (1-3 Days/Week)":
            # valBMR = round(valBMR * 1.375)
